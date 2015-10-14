@@ -26,7 +26,7 @@ motor_shaft_diameter = 5;
 motor_shaft_radius = motor_shaft_diameter/2 + extra_radius;
 
 // Frame brackets. M3x8mm screws work best with 3.6 mm brackets.
-thickness = 3.6;
+thickness = 4.0; //3.6 on 1515
 
 // OpenBeam or Misumi. Currently only 15x15 mm, but there is a plan
 // to make models more parametric and allow 20x20 mm in the future.
@@ -35,3 +35,14 @@ extrusion = 20;
 // Placement for the NEMA17 stepper motors.
 motor_offset = 44;
 motor_length = 47;
+
+//extrusion_channel_w = 5; //use 3 for 1515
+//extrusion_channel_d = 3; //use 3 for 1515
+//extrusion_fin_d = 1;
+
+vertex_radius = 40.5; //set to 36 for 1515
+vertex_x_offset = 7.25; // offset of the horizontal extrusion to the vertical one in X axis
+vertex_y_offset = 39 ;//27; // offset of the horizontal extrusion to the vertical one in Y axis
+
+
+
