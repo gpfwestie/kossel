@@ -1,12 +1,12 @@
 // Increase this if your slicer or printer make holes too tight.
-extra_radius = 0.1;
+extra_radius = 0; // 0.1;
 
 // OD = outside diameter, corner to corner.
 m3_nut_od = 6.1;
 m3_nut_radius = m3_nut_od/2 + 0.2 + extra_radius;
 m3_washer_radius = 3.5 + extra_radius;
 
-m4_nut_od = 7.6;
+m4_nut_od = 7.8;
 m4_nut_radius = m4_nut_od/2 + 0.2 + extra_radius;
 m4_washer_radius = 4.4 + extra_radius;
 
@@ -36,9 +36,7 @@ extrusion = 20;
 motor_offset = 44;
 motor_length = 47;
 
-//extrusion_channel_w = 5; //use 3 for 1515
-//extrusion_channel_d = 3; //use 3 for 1515
-//extrusion_fin_d = 1;
+extrusion_fin_d = 1;
 
 vertex_radius = 40.5; //set to 36 for 1515
 vertex_x_offset = 7.25; // offset of the horizontal extrusion to the vertical one in X axis

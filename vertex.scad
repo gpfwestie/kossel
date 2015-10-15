@@ -34,7 +34,7 @@ module screw_socket_cone()
 	}
 }
 
-module vertex(height, idler_offset, idler_space, fin_w=5, fin_d, fins=0, fn=180)
+module vertex(height, idler_offset, idler_space, fn=180)
 {
 	translate([0,2.5,0])
 		union()
@@ -147,7 +147,7 @@ module vertex(height, idler_offset, idler_space, fin_w=5, fin_d, fins=0, fn=180)
 
 
 translate([0, 0, extrusion*2.5/2]) 
-    vertex(extrusion*2.5, idler_offset=0, idler_space=10, fin_w=5, fin_d=4, fins=0, fn=20 );
+    vertex(extrusion*2.5, idler_offset=0, idler_space=10, fn=20 );
 
 //translate([0, 0, 7.5]) vertex_cover(3);
 
