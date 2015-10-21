@@ -4,6 +4,8 @@ extra_radius = 0; // 0.1;
 // OD = outside diameter, corner to corner.
 m3_nut_od = 6.1;
 m3_nut_radius = m3_nut_od/2 + 0.2 + extra_radius;
+m3_nut_h = 2.4;
+m3_nyloc_h = 3.9;
 m3_washer_radius = 3.5 + extra_radius;
 
 m4_nut_od = 7.8;
@@ -20,6 +22,8 @@ m4_major = 4.85;
 m4_radius = m4_major/2 + extra_radius;
 m4_wide_radius = m4_major/2 + extra_radius + 0.2;
 
+// M6 Radius
+m6_radius = 6/2;
 
 // NEMA17 stepper motors.
 motor_shaft_diameter = 5;
@@ -35,6 +39,8 @@ extrusion = 20;
 // Placement for the NEMA17 stepper motors.
 motor_offset = 44;
 motor_length = 47;
+
+separation = 38;  // Distance between ball joint mounting faces.
 
 extrusion_fin_d = 1;
 

@@ -1,3 +1,5 @@
+include <configuration.scad>;
+
 roller_x = 19.5;
 roller_y = 25;
 roller_z = 15;
@@ -10,12 +12,6 @@ thickness = 7;
 carriage_width = 20;
 center_x = width/2;
 center_y = height/2;
-
-m3_radius = 3.4/2;
-m3_nut_h = 3.1;
-m3_nut_w  = 5.5+0.2;
-
-m6_radius = 6.3/2;
 
 shoulder_width = 12;
 shoulder_radius = width/2-carriage_width/2;
@@ -94,8 +90,8 @@ module carriage_adapter()
 		translate([-carriage_width/4+1.2,height/2-4.5,0])
 		{
 			cylinder(r=m3_radius,h=20,$fn=24);
-			translate([0, 0, thickness-m3_nut_h])
-			cylinder(r=m3_nut_w/2*1.154734411,h=m3_nut_h+1,$fn=6);
+			translate([0, 0, thickness-m3_nyloc_h])
+			cylinder(r=m3_nut_radius,h=m3_nyloc_h+1,$fn=6);
 		}
 		}
 
@@ -119,9 +115,9 @@ module carriage_adapter()
 
 		translate([6+4+6/2, 10/2, (thickness+1)/2])
 		rotate([0,90,0])
-			cylinder(r=m3_nut_w/2*1.154734411, h=m3_nut_h, center=true, $fn=6);
+			cylinder(r=m3_nut_radius, h=m3_nyloc_h, center=true, $fn=6);
 		translate([6+4+6/2, 10/2, (thickness+2)*3/4]) 
-			cube([m3_nut_h, m3_nut_w, (thickness+2)/2], center=true);
+			cube([m3_nyloc_h, m3_nut_radius*2, (thickness+2)/2], center=true);
 		}			
 	}
 }

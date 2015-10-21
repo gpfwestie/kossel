@@ -1,10 +1,10 @@
 include <configuration.scad>;
 
-separation = 38;  // Distance between ball joint mounting faces.
 offset = 24;  // Same as DELTA_EFFECTOR_OFFSET in Marlin.
 mount_radius = 12.5;  // Hotend mounting screws, standard would be 25mm.
 hotend_radius = 8;  // Hole for the hotend (J-Head diameter is 16mm).
-push_fit_height = 4;  // Length of brass threaded into printed plastic.
+hotend_recess = 4.7;  // How much to sink the hotend into the effector
+push_fit_radius = 6;  // Rim around it stops the hotend moving upwards
 height = 8;
 cone_r1 = 3.5;
 cone_r2 = 14;
@@ -32,21 +32,25 @@ module effector() {
 	    }
 	    rotate([0, 90, 0])
 	      cylinder(r=bolt_radius, h=separation+1, center=true, $fn=12);
-	    rotate([90, 0, 90])
-	      cylinder(r=nut_radius, h=separation-24, center=true, $fn=6);
+	    //rotate([90, 0, 90])
+	    //  cylinder(r=nut_radius, h=separation-24, center=true, $fn=6);
 	  }
         }
       }
     }
-    //translate([0, 0, push_fit_height-height/2])
-    translate([0,0,-height])
-      cylinder(r=hotend_radius, h=height*2, $fn=36);
-    //translate([0, 0, -6]) # import("m5_internal.stl");
+    // Recess for hotend
+    translate([0, 0, -height/2])
+      cylinder(r=hotend_radius, h=hotend_recess, $fn=36);
+    // Hole for push fit connector to go through
+    translate([0, 0, -height/2])
+      cylinder(r=push_fit_radius, h=height, $fn=36);
+    
     for (a = [0:60:359]) rotate([0, 0, a]) {
-      translate([0, mount_radius, 0])
+        translate([0, mount_radius, 0])
 	cylinder(r=m3_wide_radius, h=2*height, center=true, $fn=12);
     }
   }
 }
 
-translate([0, 0, height/2]) effector();
+effector();
+//translate([0, 0, height/2]) effector();

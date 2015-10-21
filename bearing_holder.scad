@@ -40,8 +40,11 @@ module bearing_holder()
 {
     difference()
     {
-        translate([-7.5,0,-m3_nut_h-10])
-            cube([15,10,m3_nut_h*2+8+20]);
+       translate([-7.5,0,-m3_nut_h-10])
+                cube([15,10,m3_nut_h*2+8+20]);
+       translate([0,0,-m3_nut_h-10+3.5])
+                cube([20,20,10],center=true);
+           
         union()
         {
             support_cones();
@@ -56,6 +59,7 @@ module bearing_holder()
         }
     }
 }
+// 26.75
 
 bearing_holder();
 
