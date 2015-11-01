@@ -1,12 +1,46 @@
 include <configuration.scad>;
 
-use <microswitch.scad>;
+difference()
+{
+    union()
+    {
+        cube([39,16,4]);
+        translate([2.5,2.5,0])
+        {
+            cylinder(r=2, h=6, $fn=50);
+            cylinder(r=1.5, h=8, $fn=50);
+        }
+        translate([33+2.5,2.5,0])
+        {
+            cylinder(r=2, h=6, $fn=50);
+            cylinder(r=1.5, h=8, $fn=50);
+        }
+        translate([2.5,16-2.5,0])
+        {
+            cylinder(r=2, h=6, $fn=50);
+            cylinder(r=1.5, h=8, $fn=50);
+        }
+        translate([2.5+18.5,2.5,0])
+        {
+            cylinder(r=2, h=6, $fn=50);
+        }
+        translate([33+2.5,16-2.5,0])
+        {
+            cylinder(r=2, h=6, $fn=50);
+        }
+    }
+    translate([2.5+18.5,2.5,0])
+    {
+        cylinder(r=1.5,h=10,$fn=50);
+    }
+}
+//use <microswitch.scad>;
 
-thickness = 9;  // 1mm thicker than linear rail.
-width = 15;  // Same as vertical extrusion.
-height = 15;
+//thickness = 9;  // 1mm thicker than linear rail.
+//width = 15;  // Same as vertical extrusion.
+//height = 15;
 
-module endstop() {
+/*module endstop() {
   difference() {
     union() {
       cube([width, thickness, height], center=true);
@@ -35,4 +69,4 @@ module endstop() {
   }
 }
 
-translate([0, 0, height/2]) endstop();
+translate([0, 0, height/2]) endstop();*/
