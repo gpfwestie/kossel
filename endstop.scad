@@ -1,72 +1,63 @@
 include <configuration.scad>;
 
+height = 2;
+
 difference()
 {
     union()
     {
-        cube([39,16,4]);
+        cube([39,16,height]);
+        translate([-4.5,0,0])
+        {
+            cube([28,24,height]);
+        }
+        /*translate([2.5+18.5-2-10-2,0,-10])
+        {
+            cube([4,16,10]);
+        }
+        translate([2.5+18.5-2+10,0,-10])
+        {
+            cube([4,16,10]);
+        }*/
         translate([2.5,2.5,0])
         {
-            cylinder(r=2, h=6, $fn=50);
-            cylinder(r=1.5, h=8, $fn=50);
+            cylinder(r=2, h=height+2, $fn=50);
+            cylinder(r=m3_radius, h=height+3.75, $fn=50);
         }
-        translate([33+2.5,2.5,0])
+        translate([34+2.5,2.5,0])
         {
-            cylinder(r=2, h=6, $fn=50);
-            cylinder(r=1.5, h=8, $fn=50);
+            cylinder(r=2, h=height+2, $fn=50);
+            cylinder(r=m3_radius, h=height+3.75, $fn=50);
         }
         translate([2.5,16-2.5,0])
         {
-            cylinder(r=2, h=6, $fn=50);
-            cylinder(r=1.5, h=8, $fn=50);
+            cylinder(r=2, h=height+2, $fn=50);
         }
-        translate([2.5+18.5,2.5,0])
+        translate([2.5+19,2.5,0])
         {
-            cylinder(r=2, h=6, $fn=50);
+            cylinder(r=2, h=height+2, $fn=50);
         }
-        translate([33+2.5,16-2.5,0])
+        translate([34+2.5,16-2.5,0])
         {
-            cylinder(r=2, h=6, $fn=50);
+            cylinder(r=2, h=height+2, $fn=50);
+            cylinder(r=m3_radius, h=height+3.75, $fn=50);
         }
     }
-    translate([2.5+18.5,2.5,0])
+    translate([2.5+19,2.5,0])
     {
-        cylinder(r=1.5,h=10,$fn=50);
+        cylinder(r=no4_pilot_radius,h=10,$fn=50);
+    }
+    translate([2-4.5,20,-5])
+    {
+        cylinder(r=no4_pilot_radius, h=10, $fn=50);
+    }
+    translate([10-0.5,20,0])
+    {
+        translate([0,0,height-1.2])
+        {
+            cylinder(r=3.5,h=1.2,$fn=50);
+        }
+        cylinder(r=m3_radius,h=10,$fn=50);
+        
     }
 }
-//use <microswitch.scad>;
-
-//thickness = 9;  // 1mm thicker than linear rail.
-//width = 15;  // Same as vertical extrusion.
-//height = 15;
-
-/*module endstop() {
-  difference() {
-    union() {
-      cube([width, thickness, height], center=true);
-      translate([0, 0, -height/4])
-        cube([width+2, thickness, height/2], center=true);
-      translate([0, 2, 0])
-        cube([2.5, thickness, height], center=true);
-    }
-    translate([0, 0, 3]) rotate([90, 0, 0]) {
-      cylinder(r=m3_wide_radius, h=20, center=true, $fn=12);
-      translate([0, 0, 3.6-thickness/2]) {
-        cylinder(r=3, h=10, $fn=24);
-        translate([0, 5, 5])
-          cube([6, 10, 10], center=true);
-      }
-      translate([0, 0, -thickness/2]) scale([1, 1, -1])
-        cylinder(r1=m3_wide_radius, r2=7, h=4, $fn=24);
-    }
-    translate([0, -3-thickness/2, -2]) rotate([0, 180, 0]) {
-      % microswitch();
-      for (x = [-9.5/2, 9.5/2]) {
-        translate([x, 0, 0]) rotate([90, 0, 0])
-          cylinder(r=2.5/2, h=40, center=true, $fn=12);
-      }
-    }
-  }
-}
-
-translate([0, 0, height/2]) endstop();*/

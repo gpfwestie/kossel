@@ -13,17 +13,20 @@ m4_nut_radius = m4_nut_od/2 + 0.2 + extra_radius;
 m4_washer_radius = 4.4 + extra_radius;
 
 // Major diameter of metric 3mm thread.
-m3_major = 2.85;
+m3_major = 3;
 m3_radius = m3_major/2 + extra_radius;
 m3_wide_radius = m3_major/2 + extra_radius + 0.2;
 
 // Major diameter of metric 4mm thread.
-m4_major = 4.85;
+m4_major = 4;
 m4_radius = m4_major/2 + extra_radius;
 m4_wide_radius = m4_major/2 + extra_radius + 0.2;
 
 // M6 Radius
 m6_radius = 6/2;
+
+// No4 Self Tapper pilot hole radius
+no4_pilot_radius = 2.35/2;
 
 // NEMA17 stepper motors.
 motor_shaft_diameter = 5;
