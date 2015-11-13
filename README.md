@@ -7,5 +7,7 @@ I give credit for the original designers who are :-
  Designer       Original Source
  ============================================================================
  Jaydmdigital    https://github.com/Jaydmdigital/Kossel_2020 (Vertices)
- Niisaka         http://www.thingiverse.com/thing:566093     (Carriages)
- Johann Rochrell https://github.com/jcrocholl/kossel         (Everything else)
+ Niisaka         http://www.thingiverse.com/thing:566093     (Carriages)      http://www.thingiverse.com/thing:521888  
+ yik_cheung      http://www.thingiverse.com/thing:258602
+(Ramps / Mega Holder) 
+Johann Rocholl https://github.com/jcrocholl/kossel         (Everything else)
