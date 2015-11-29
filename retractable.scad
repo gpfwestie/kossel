@@ -26,15 +26,26 @@ module foot() {
   }
 }
 
+module feet()
+{
+    // Feet for vertical M3 screw attachment.
+    rotate([0, 0, 90])
+    {
+        foot();
+        scale([1, -1, 1])
+            foot();
+    }
+}
+
 module ir_mount()
 {
-    difference()
+    #difference()
     {
         cube([24.5,4,6.3]);
-        translate([24.5/2-9,10,3.15])
+        translate([24.5/2-8.75,10,3.15])
             rotate([90,0,0])
                 cylinder(r=no4_pilot_radius,h=20,$fn=12);
-        translate([24.5/2+9,10,3.15])
+        translate([24.5/2+8.75,10,3.15])
             rotate([90,0,0])
                 cylinder(r=no4_pilot_radius,h=20,$fn=12);
     }
@@ -45,18 +56,13 @@ module z_probe()
         union()
         {
             // Feet for vertical M3 screw attachment.
-            rotate([0, 0, 90])
-            {
-                foot();
-                scale([1, -1, 1])
-                    foot();
-            }
+            feet();
             // Cutout for threaded rod
             difference()
             {
                 translate([0,-13,6])
                     cube([10,4,8],center=true);
-                translate([-5,-11,6])
+                translate([-5,-11,6.5])
                     rotate([90,0,90])
                         cylinder(r=2,h=10,$fn=20);
             }
@@ -85,6 +91,6 @@ module z_probe()
 
 }
 
-rotate([0,0,90])
-    z_probe();
+//rotate([0,0,90])
+//    z_probe();
 

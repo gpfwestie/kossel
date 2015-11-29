@@ -3,8 +3,8 @@ include <configuration.scad>;
 mount_radius = 12.5;  // Hotend mounting screws, standard would be 25mm.
 hotend_radius = 8;  // Hole for the hotend (J-Head diameter is 16mm).
 //hotend_recess = 4.7;  // How much to sink the hotend into the effector
-hotend_inner_radius = 5.88;  // Rim around it stops the hotend moving upwards
-height = 5.9; // Height of slot in hotend
+hotend_inner_radius = 6;  // Rim around it stops the hotend moving upwards
+height = 5.88; // Height of slot in hotend
 
 module effector() {
   difference() {
